@@ -1,0 +1,11 @@
+FROM python:3.9-slim
+# Set working directory
+WORKDIR /app
+# Copy current directory contents into the container at /app
+COPY . /app
+# Install packages
+RUN pip install flask
+# Make port available
+EXPOSE 5000
+# Run app.py
+CMD ["python","app.py"]
