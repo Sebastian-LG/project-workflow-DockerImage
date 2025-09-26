@@ -8,6 +8,14 @@ on:
     
 
 jobs:
+
+    dockerbuild:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - name: Build docker image
+          run: docker build . --file DockerFile --tag worflow-test:$(date +%s)
+
     # Unit testing
     build-and-test:
         runs-on: ubuntu-latest
